@@ -1,0 +1,10 @@
+.ekart--product--container {
+    padding: 10px 30px;
+}
+img {
+    width: 30%;
+}
+button {
+    padding: 5px 10px;
+    margin: 0 5px;
+}
