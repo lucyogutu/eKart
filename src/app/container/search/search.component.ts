@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -10,9 +10,17 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './search.component.css',
 })
 export class SearchComponent {
-  searchText: string = 'Mens Wear';
+  searchText: string = '';
 
   updateSearchText(event: any) {
     this.searchText = event.target.value;
+  }
+  @Output() //used to bind with parent component
+  // create an event
+  searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
+
+  // raise custom event and bind within the component event
+  onSearchTextChanged() {
+    this.searchTextChanged.emit(this.searchText);
   }
 }

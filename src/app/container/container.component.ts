@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SearchComponent } from '../container/search/search.component';
 import { CommonModule } from '@angular/common';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -10,4 +10,10 @@ import { ProductListComponent } from './product-list/product-list.component';
   templateUrl: './container.component.html',
   styleUrl: './container.component.css',
 })
-export class ContainerComponent {}
+export class ContainerComponent {
+  searchText: string = '';
+
+  setSearchText(value: string) {
+    this.searchText = value;
+  }
+}

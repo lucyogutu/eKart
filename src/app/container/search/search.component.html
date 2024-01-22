@@ -12,6 +12,7 @@
     type="text"
     class="ekart-search-product-input"
     [(ngModel)]="searchText"
+    (input)="onSearchTextChanged()"
   />
   <button
     [ngClass]="{

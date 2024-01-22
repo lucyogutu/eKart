@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductComponent } from './product/product.component';
 import { FilterComponent } from './filter/filter.component';
@@ -101,6 +101,26 @@ export class ProductListComponent {
     },
     {
       id: 5,
+      name: 'React Miler',
+      description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. A aut assumenda
+      expedita molestiae ad! Reprehenderit sunt exercitationem sint quis provident
+      aperiam officiis voluptatem, vitae a possimus minus unde facilis,
+      consequuntur dignissimos labore illum cum esse, accusamus molestiae natus
+      ipsam recusandae. Numquam tempora earum cumque maiores, incidunt eaque non
+      fugit ut.`,
+      brand: 'NIKE',
+      gender: 'MEN',
+      category: 'RUNNING',
+      size: [6, 7, 8, 9, 10],
+      color: ['White', 'Blue', 'Black'],
+      price: 160,
+      discountPrice: 140,
+      is_in_inventory: true,
+      url: 'https://static.nike.com/a/images/c_limit,w592,f_auto/t_product_v1/i1-665455a5-45de-40fb-945f-c1852b82400d/react-infinity-run-flyknit-mens-running-shoe-zX42Nc.jpg',
+      slug: 'nike-react-miler',
+    },
+    {
+      id: 6,
       name: 'Nike React Miler',
       description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. A aut assumenda
       expedita molestiae ad! Reprehenderit sunt exercitationem sint quis provident
@@ -136,4 +156,6 @@ export class ProductListComponent {
   onFilterChanged(value: string) {
     this.selectedFilterRadioButton = value;
   }
+
+  @Input() searchText: string;
 }
