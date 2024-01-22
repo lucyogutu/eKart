@@ -1,6 +1,4 @@
+<!-- use of *ngFor structural directive -->
 <div class="ekart--top--bar">
-  <a href="#">Help</a>
-  <a href="#">Exchange and Returns</a>
-  <a href="#">Order Tracker</a>
-  <a href="#">Signup / Login</a>
+  <a href="#" *ngFor="let topMenuItem of topMenuItems">{{ topMenuItem }}</a>
 </div>
