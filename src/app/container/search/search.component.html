@@ -1,4 +1,6 @@
 <!-- use of ngModel for two way data binding, you can see the first solution commented out -->
+<!-- use of ngIf for conditional display -->
+<!-- use of ngClass for rendering class element based on some typescript expression -->
 <div class="ekart--search--product">
   <!-- <input
     type="text"
@@ -11,10 +13,20 @@
     class="ekart-search-product-input"
     [(ngModel)]="searchText"
   />
-  <button class="btn btn-search">Search</button>
+  <button
+    [ngClass]="{
+      btn: true,
+      'btn-search': searchText,
+      'btn-search-disabled': !searchText
+    }"
+  >
+    Search
+  </button>
 </div>
 <div class="ekart-search-result-for">
-  <p><strong>Search result for;</strong> {{ searchText }}</p>
+  <p *ngIf="searchText != ''">
+    <strong>Search result for;</strong> {{ searchText }}
+  </p>
 </div>
 
 <!-- <div class="ekart-product-container-header">
