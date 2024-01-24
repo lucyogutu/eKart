@@ -7,7 +7,7 @@
   (selectedFilterRadioButtonChanged)="onFilterChanged($event)"
 ></app-filter>
 <div class="ekart--product--container">
-  <div *ngFor="let product of products">
+  <div *ngFor="let product of products" (click)="selectedProduct = product">
     <!-- *ngIf="
         selectedFilterRadioButton === 'all' ||
         product.is_in_inventory.toString() === selectedFilterRadioButton
@@ -19,4 +19,5 @@
       "
     ></app-product>
   </div>
+  
 </div>

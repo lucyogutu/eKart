@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Product } from '../../../models/product';
 
 @Component({
   selector: 'app-product',
@@ -10,19 +11,5 @@ import { CommonModule } from '@angular/common';
 })
 export class ProductComponent {
   @Input()
-  product!: {
-    id: number;
-    name: string;
-    description: string;
-    brand: string;
-    gender: string;
-    category: string;
-    size: number[];
-    color: string[];
-    price: number;
-    discountPrice?: number;
-    is_in_inventory: boolean;
-    url: string;
-    slug: string;
-  };
+  product!: Product;
 }

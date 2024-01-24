@@ -1,6 +1,7 @@
 <!-- use of ngModel for two way data binding, you can see the first solution commented out -->
 <!-- use of ngIf for conditional display -->
 <!-- use of ngClass for rendering class element based on some typescript expression -->
+<!-- use of template reference variable on html element -->
 <div class="ekart--search--product">
   <!-- <input
     type="text"
@@ -8,19 +9,30 @@
     [value]="searchText"
     (input)="updateSearchText($event)"
   /> -->
-  <input
+  <!-- <input
     type="text"
     class="ekart-search-product-input"
     [(ngModel)]="searchText"
     (input)="onSearchTextChanged()"
-  />
-  <button
+  /> -->
+  <!-- <button
     [ngClass]="{
       btn: true,
       'btn-search': searchText,
       'btn-search-disabled': !searchText
     }"
   >
+    Search
+  </button> -->
+  <input
+    type="text"
+    class="ekart-search-product-input"
+    [(ngModel)]="searchText"
+    (input)="onSearchTextChanged()"
+    #searchInput
+  />
+
+  <button class="btn btn-search" (click)="updateSearchText(searchInput)">
     Search
   </button>
 </div>

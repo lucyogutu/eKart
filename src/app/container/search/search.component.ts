@@ -12,8 +12,10 @@ import { FormsModule } from '@angular/forms';
 export class SearchComponent {
   searchText: string = '';
 
-  updateSearchText(event: any) {
-    this.searchText = event.target.value;
+  updateSearchText(input: HTMLInputElement) {
+    // this.searchText = event.target.value;
+    this.searchText = input.value;
+    this.onSearchTextChanged();
   }
   @Output() //used to bind with parent component
   // create an event
