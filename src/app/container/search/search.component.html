@@ -29,10 +29,13 @@
     class="ekart-search-product-input"
     [(ngModel)]="searchText"
     (input)="onSearchTextChanged()"
-    #searchInput
+    #searchInput 
   />
 
-  <button class="btn btn-search" (click)="updateSearchText(searchInput)">
+  <!-- <button class="btn btn-search" (click)="updateSearchText(searchInput)">
+    Search
+  </button> -->
+  <button class="btn btn-search" (click)="updateSearchText()">
     Search
   </button>
 </div>

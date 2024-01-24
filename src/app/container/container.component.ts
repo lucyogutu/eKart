@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { SearchComponent } from '../container/search/search.component';
 import { CommonModule } from '@angular/common';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -18,6 +18,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 })
 export class ContainerComponent {
   searchText: string = '';
+
+  @ViewChild(ProductListComponent) productListComponent: ProductListComponent;
 
   setSearchText(value: string) {
     this.searchText = value;

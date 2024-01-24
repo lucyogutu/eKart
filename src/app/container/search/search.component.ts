@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -12,9 +18,16 @@ import { FormsModule } from '@angular/forms';
 export class SearchComponent {
   searchText: string = '';
 
-  updateSearchText(input: HTMLInputElement) {
-    // this.searchText = event.target.value;
-    this.searchText = input.value;
+  // query a reference of a DOM input search element
+  @ViewChild('searchInput') searchInputElement: ElementRef;
+
+  // updateSearchText(input: HTMLInputElement) {
+  //   // this.searchText = event.target.value;
+  //   this.searchText = input.value;
+  //   this.onSearchTextChanged();
+  // }
+  updateSearchText() {
+    this.searchText = this.searchInputElement.nativeElement.value;
     this.onSearchTextChanged();
   }
   @Output() //used to bind with parent component
