@@ -1,5 +1,5 @@
 <!-- ngStyle attribute directive -->
-<div class="ekart--product--item" >
+<div class="ekart--product--item" appHighlight [disableProduct]="!product.is_in_inventory">
     <div class="ekart-wishlist-sale-container">
       <div class="ekart--add--to--wishlist">
         <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -9,7 +9,7 @@
         OFF
       </div>
     </div>
-    <div class="ekart--product--image">
+    <div class="ekart--product--image" [ngClass]="">
       <img [src]="product.url" alt="" class="ekart--product--image" />
     </div>
     <div class="ekart--add--to--price">{{ product.price }}</div>
